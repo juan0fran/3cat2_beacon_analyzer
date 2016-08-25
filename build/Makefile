@@ -102,6 +102,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named isis_raw
+
+# Build rule for target.
+isis_raw: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 isis_raw
+.PHONY : isis_raw
+
+# fast build rule for target.
+isis_raw/fast:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/build
+.PHONY : isis_raw/fast
+
+#=============================================================================
 # Target rules for targets named kiss
 
 # Build rule for target.
@@ -119,6 +132,7 @@ src/3cat2_telemetry.o: src/3cat2_telemetry.c.o
 
 # target to build an object file
 src/3cat2_telemetry.c.o:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o
 .PHONY : src/3cat2_telemetry.c.o
 
@@ -127,6 +141,7 @@ src/3cat2_telemetry.i: src/3cat2_telemetry.c.i
 
 # target to preprocess a source file
 src/3cat2_telemetry.c.i:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.i
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/3cat2_telemetry.c.i
 .PHONY : src/3cat2_telemetry.c.i
 
@@ -135,6 +150,7 @@ src/3cat2_telemetry.s: src/3cat2_telemetry.c.s
 
 # target to generate assembly for a file
 src/3cat2_telemetry.c.s:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.s
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/3cat2_telemetry.c.s
 .PHONY : src/3cat2_telemetry.c.s
 
@@ -143,6 +159,7 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/main.c.o
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/main.c.o
 .PHONY : src/main.c.o
 
@@ -151,6 +168,7 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/main.c.i
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/main.c.i
 .PHONY : src/main.c.i
 
@@ -159,6 +177,7 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/main.c.s
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/main.c.s
 .PHONY : src/main.c.s
 
@@ -167,6 +186,7 @@ src/socket_utils.o: src/socket_utils.c.o
 
 # target to build an object file
 src/socket_utils.c.o:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/socket_utils.c.o
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/socket_utils.c.o
 .PHONY : src/socket_utils.c.o
 
@@ -175,6 +195,7 @@ src/socket_utils.i: src/socket_utils.c.i
 
 # target to preprocess a source file
 src/socket_utils.c.i:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/socket_utils.c.i
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/socket_utils.c.i
 .PHONY : src/socket_utils.c.i
 
@@ -183,8 +204,36 @@ src/socket_utils.s: src/socket_utils.c.s
 
 # target to generate assembly for a file
 src/socket_utils.c.s:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/socket_utils.c.s
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/socket_utils.c.s
 .PHONY : src/socket_utils.c.s
+
+src/util.o: src/util.c.o
+.PHONY : src/util.o
+
+# target to build an object file
+src/util.c.o:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/util.c.o
+	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/util.c.o
+.PHONY : src/util.c.o
+
+src/util.i: src/util.c.i
+.PHONY : src/util.i
+
+# target to preprocess a source file
+src/util.c.i:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/util.c.i
+	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/util.c.i
+.PHONY : src/util.c.i
+
+src/util.s: src/util.c.s
+.PHONY : src/util.s
+
+# target to generate assembly for a file
+src/util.c.s:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/util.c.s
+	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/util.c.s
+.PHONY : src/util.c.s
 
 # Help Target
 help:
@@ -193,6 +242,7 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... isis_raw"
 	@echo "... kiss"
 	@echo "... rebuild_cache"
 	@echo "... src/3cat2_telemetry.o"
@@ -204,6 +254,9 @@ help:
 	@echo "... src/socket_utils.o"
 	@echo "... src/socket_utils.i"
 	@echo "... src/socket_utils.s"
+	@echo "... src/util.o"
+	@echo "... src/util.i"
+	@echo "... src/util.s"
 .PHONY : help
 
 

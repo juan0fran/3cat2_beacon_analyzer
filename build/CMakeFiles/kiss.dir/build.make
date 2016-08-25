@@ -121,11 +121,35 @@ CMakeFiles/kiss.dir/src/socket_utils.c.o.provides: CMakeFiles/kiss.dir/src/socke
 
 CMakeFiles/kiss.dir/src/socket_utils.c.o.provides.build: CMakeFiles/kiss.dir/src/socket_utils.c.o
 
+CMakeFiles/kiss.dir/src/util.c.o: CMakeFiles/kiss.dir/flags.make
+CMakeFiles/kiss.dir/src/util.c.o: ../src/util.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/kiss.dir/src/util.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/kiss.dir/src/util.c.o   -c /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/util.c
+
+CMakeFiles/kiss.dir/src/util.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/kiss.dir/src/util.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/util.c > CMakeFiles/kiss.dir/src/util.c.i
+
+CMakeFiles/kiss.dir/src/util.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/kiss.dir/src/util.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/util.c -o CMakeFiles/kiss.dir/src/util.c.s
+
+CMakeFiles/kiss.dir/src/util.c.o.requires:
+.PHONY : CMakeFiles/kiss.dir/src/util.c.o.requires
+
+CMakeFiles/kiss.dir/src/util.c.o.provides: CMakeFiles/kiss.dir/src/util.c.o.requires
+	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/util.c.o.provides.build
+.PHONY : CMakeFiles/kiss.dir/src/util.c.o.provides
+
+CMakeFiles/kiss.dir/src/util.c.o.provides.build: CMakeFiles/kiss.dir/src/util.c.o
+
 # Object files for target kiss
 kiss_OBJECTS = \
 "CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o" \
 "CMakeFiles/kiss.dir/src/main.c.o" \
-"CMakeFiles/kiss.dir/src/socket_utils.c.o"
+"CMakeFiles/kiss.dir/src/socket_utils.c.o" \
+"CMakeFiles/kiss.dir/src/util.c.o"
 
 # External object files for target kiss
 kiss_EXTERNAL_OBJECTS =
@@ -133,6 +157,7 @@ kiss_EXTERNAL_OBJECTS =
 ../bin/kiss: CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o
 ../bin/kiss: CMakeFiles/kiss.dir/src/main.c.o
 ../bin/kiss: CMakeFiles/kiss.dir/src/socket_utils.c.o
+../bin/kiss: CMakeFiles/kiss.dir/src/util.c.o
 ../bin/kiss: CMakeFiles/kiss.dir/build.make
 ../bin/kiss: CMakeFiles/kiss.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --red --bold "Linking C executable ../bin/kiss"
@@ -145,6 +170,7 @@ CMakeFiles/kiss.dir/build: ../bin/kiss
 CMakeFiles/kiss.dir/requires: CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o.requires
 CMakeFiles/kiss.dir/requires: CMakeFiles/kiss.dir/src/main.c.o.requires
 CMakeFiles/kiss.dir/requires: CMakeFiles/kiss.dir/src/socket_utils.c.o.requires
+CMakeFiles/kiss.dir/requires: CMakeFiles/kiss.dir/src/util.c.o.requires
 .PHONY : CMakeFiles/kiss.dir/requires
 
 CMakeFiles/kiss.dir/clean:

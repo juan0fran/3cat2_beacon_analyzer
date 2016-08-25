@@ -24,5 +24,6 @@ typedef struct ax25_packet_t{
 int read_kiss_from_socket(int fd, char * buffer);
 ErrorHandler kiss_ax25_unpack(char * buffer, int size, ax25_packet_t * out);
 ErrorHandler decode_3cat2_packet(ax25_packet_t * in);
+ErrorHandler rawprint_3cat2_packet(ax25_packet_t * in);
 
 #endif

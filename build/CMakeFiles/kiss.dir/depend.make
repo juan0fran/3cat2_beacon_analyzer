@@ -3,11 +3,17 @@
 
 CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o: ../include/3cat2_telemetry.h
 CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o: ../include/socket_utils.h
+CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o: ../include/util.h
 CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o: ../src/3cat2_telemetry.c
 
 CMakeFiles/kiss.dir/src/main.c.o: ../include/3cat2_telemetry.h
 CMakeFiles/kiss.dir/src/main.c.o: ../include/socket_utils.h
+CMakeFiles/kiss.dir/src/main.c.o: ../include/util.h
 CMakeFiles/kiss.dir/src/main.c.o: ../src/main.c
 
 CMakeFiles/kiss.dir/src/socket_utils.c.o: ../src/socket_utils.c
+
+CMakeFiles/kiss.dir/src/util.c.o: ../include/socket_utils.h
+CMakeFiles/kiss.dir/src/util.c.o: ../include/util.h
+CMakeFiles/kiss.dir/src/util.c.o: ../src/util.c
 

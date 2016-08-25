@@ -8,6 +8,7 @@
 #include <socket_utils.h>
 #include <time.h>
 #include <3cat2_telemetry.h>
+#include <util.h>
 
 static void PrintBeacon(char * message){
 	int first_beacon_part[7];
@@ -36,9 +37,13 @@ static void PrintBeacon(char * message){
 			second_beacon_part[3], second_beacon_part[4], second_beacon_part[5]);
 	}
 }
+
+ErrorHandler rawprint_3cat2_packet(ax25_packet_t * in){
+	printf("%s\n", &in->info[1]);
+	return NO_ERROR;
+}
+
 ErrorHandler decode_3cat2_packet(ax25_packet_t * in){
-	printf("\tFrom: %s\n", in->from);
-	printf("\tTo: %s\n", in->to);
 	if ((unsigned char) in->info[0] == 0xFF){
 		PrintBeacon(in->info+1);
 		return NO_ERROR;
@@ -61,7 +66,7 @@ int read_kiss_from_socket(int fd, char * buffer){
 		size = read(fd, &byte, 1);
 		if (size <= 0){
 			if (size == 0){
-				printf("End of socket\n");
+				do_printf("End of socket\n");
 			}else{
 				perror("Error reading socket -> ");
 			}
@@ -72,16 +77,16 @@ int read_kiss_from_socket(int fd, char * buffer){
 		size = read(fd, &byte, 1);
 		if (size <= 0){
 			if (size == 0){
-				printf("End of socket\n");
+				do_printf("End of socket\n");
 			}else{
 				perror("Error reading socket -> ");
 			}
 			exit(-1);
 		}
 		if ((unsigned char)byte == 0x00){
-			printf("Frame found:\n");
+			do_printf("Frame found:\n");
 		}else{
-			printf("Control frame found: ");
+			do_printf("Control frame found: ");
 			no_frame = true;
 			i = 0;
 			transpose = false;
@@ -89,7 +94,7 @@ int read_kiss_from_socket(int fd, char * buffer){
 				size = read(fd, &byte, 1);
 				if (size <= 0){
 					if (size == 0){
-						printf("End of socket\n");
+						do_printf("End of socket\n");
 					}else{
 						perror("Error reading socket -> ");
 					}
@@ -113,7 +118,7 @@ int read_kiss_from_socket(int fd, char * buffer){
 				}
 			}
 			buffer[i] = '\0';
-			printf("%s\n", buffer);
+			do_printf("%s\n", buffer);
 			return NO_BEACON;
 		}
 	}else{
@@ -126,7 +131,7 @@ int read_kiss_from_socket(int fd, char * buffer){
 		size = read(fd, &byte, 1);
 		if (size <= 0){
 			if (size == 0){
-				printf("End of socket\n");
+				do_printf("End of socket\n");
 			}else{
 				perror("Error reading socket -> ");
 			}
@@ -157,7 +162,7 @@ ErrorHandler kiss_ax25_unpack(char * buffer, int size, ax25_packet_t * out){
 	out->size = size;
 
 	if (out->size < 17){
-		printf("Frame discarded, too short packet\n");
+		do_printf("Frame discarded, too short packet\n");
 		return NO_FRAME;
 	}
 
@@ -167,8 +172,12 @@ ErrorHandler kiss_ax25_unpack(char * buffer, int size, ax25_packet_t * out){
 	if (buffer[6] == '\0' && buffer[13] == '\0'){
 		strcpy(out->to, buffer);
 		strcpy(out->from, buffer+7);
+	
+		do_printf("\tFrom: %s\n", out->from);
+		do_printf("\tTo: %s\n", out->to);
+
 	}else{
-		printf("Frame discarded, wrong addresses (not following ax25 format)\n");
+		do_printf("Frame discarded, wrong addresses (not following ax25 format)\n");
 		return NO_FRAME;
 	}
 	out->control = *buffer+14;

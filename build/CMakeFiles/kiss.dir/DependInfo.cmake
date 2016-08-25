@@ -7,6 +7,7 @@ SET(CMAKE_DEPENDS_CHECK_C
   "/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/3cat2_telemetry.c" "/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o"
   "/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/main.c" "/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles/kiss.dir/src/main.c.o"
   "/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/socket_utils.c" "/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles/kiss.dir/src/socket_utils.c.o"
+  "/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/util.c" "/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles/kiss.dir/src/util.c.o"
   )
 SET(CMAKE_C_COMPILER_ID "Clang")
 
