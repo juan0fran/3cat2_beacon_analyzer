@@ -1,3 +1,10 @@
+#Beacon analyzer for CUBECAT-2 (3CAT-2) mission.
+
+**It can receive a stream from GNURadio TCP Server or from a file using netcat (nc)**
+
+*The GNURadio receiver and demodulator can be found at http://destevez.net/2016/08/decoding-packets-from-3cat2*
+
+
 To compile:<br/>
 rm -r build<br/>
 mkdir build<br/>
