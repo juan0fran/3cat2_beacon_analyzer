@@ -18,12 +18,17 @@ int main (int argc, char ** argv) {
 	}
 	int i;
 	int fd = initialise_client_socket(argv[1], argv[2]);
+	printf("Connected to the socket succesfully\n");
 	ax25_packet_t ax25;
 	char buffer[256];
 	int size;
 	ErrorHandler err;
 	while (1){
 		size = read_kiss_from_socket(fd, buffer);
+		if (size == NO_FRAME || size == NO_BEACON){
+			/* Next iteration */
+			continue;
+		}
 		err = kiss_ax25_unpack(buffer, size, &ax25);
 		if (err == NO_ERROR){
 			err = decode_3cat2_packet(&ax25);

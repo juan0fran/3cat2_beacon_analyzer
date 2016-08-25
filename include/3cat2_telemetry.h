@@ -7,9 +7,9 @@
 #define TFESC	0xDD
 
 typedef enum ErrorHandler{
-	NO_ERROR,
-	NO_FRAME,
-	NO_BEACON,
+	NO_ERROR = -1,
+	NO_FRAME = -2,
+	NO_BEACON = -3,
 }ErrorHandler;
 
 typedef struct ax25_packet_t{

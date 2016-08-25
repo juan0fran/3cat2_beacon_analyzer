@@ -19,16 +19,16 @@ static void PrintBeacon(char * message){
 				second_beacon_part+3, second_beacon_part+4, second_beacon_part+5);
 	if ( (*first_beacon_part+5) == 0 ){
 		/* Whe are in DETUMBLING */
-			printf("Beacon Received...:\nMode: %d. Battery (mV): %d. Current Consumption (mA): %d. EPS Temp: %d. Antenna Temp: %d.\n"
-			"ADCS: Detumbling. Control Flag: %d. Deriv_Mag (nT): %e X %e Y %e Z. VoltageControl: %e X %e Y %e Z\n\n", 
+			printf("Beacon Received...:\n\tMode: %d. Battery (mV): %d. Current Consumption (mA): %d. EPS Temp: %d. Antenna Temp: %d.\n"
+			"\tADCS: Detumbling. Control Flag: %d. Deriv_Mag (nT): %e X %e Y %e Z. VoltageControl: %e X %e Y %e Z\n\n", 
 			first_beacon_part[0], 
 			first_beacon_part[1], first_beacon_part[2], first_beacon_part[3], first_beacon_part[4], 
 			first_beacon_part[6],
 			second_beacon_part[0], second_beacon_part[1], second_beacon_part[2],
 			second_beacon_part[3], second_beacon_part[4], second_beacon_part[5]);
 	}else{
-			printf("Beacon Received...:\nMode: %d. Battery (mV): %d. Current Consumption (mA): %d. EPS Temp: %d. Antenna Temp: %d.\n"
-			"ADCS: SS-Nominal. Control Flag: %d. Sun_Vector: %e X %e Y %e Z. VoltageControl: %e X %e Y %e Z\n\n", 
+			printf("Beacon Received...:\n\tMode: %d. Battery (mV): %d. Current Consumption (mA): %d. EPS Temp: %d. Antenna Temp: %d.\n"
+			"\tADCS: SS-Nominal. Control Flag: %d. Sun_Vector: %e X %e Y %e Z. VoltageControl: %e X %e Y %e Z\n\n", 
 			first_beacon_part[0], 
 			first_beacon_part[1], first_beacon_part[2], first_beacon_part[3], first_beacon_part[4], 
 			first_beacon_part[6],
@@ -37,8 +37,8 @@ static void PrintBeacon(char * message){
 	}
 }
 ErrorHandler decode_3cat2_packet(ax25_packet_t * in){
-	printf("From: %s\n", in->from);
-	printf("To: %s\n", in->to);
+	printf("\tFrom: %s\n", in->from);
+	printf("\tTo: %s\n", in->to);
 	if ((unsigned char) in->info[0] == 0xFF){
 		PrintBeacon(in->info+1);
 		return NO_ERROR;
@@ -55,15 +55,18 @@ int read_kiss_from_socket(int fd, char * buffer){
 	char byte;
 	bool no_frame;
 	bool transpose;
+	byte = 0x00;
 	/* First of all read the two first bytes */
-	size = read(fd, &byte, 1);
-	if (size <= 0){
-		if (size == 0){
-			printf("End of socket\n");
-		}else{
-			perror("Error reading socket -> ");
+	while((unsigned char)byte != FEND){
+		size = read(fd, &byte, 1);
+		if (size <= 0){
+			if (size == 0){
+				printf("End of socket\n");
+			}else{
+				perror("Error reading socket -> ");
+			}
+			exit(-1);
 		}
-		exit(-1);
 	}
 	if ((unsigned char)byte == FEND){
 		size = read(fd, &byte, 1);
@@ -78,10 +81,43 @@ int read_kiss_from_socket(int fd, char * buffer){
 		if ((unsigned char)byte == 0x00){
 			printf("Frame found:\n");
 		}else{
-			return -1;
+			printf("Control frame found: ");
+			no_frame = true;
+			i = 0;
+			transpose = false;
+			while(no_frame){
+				size = read(fd, &byte, 1);
+				if (size <= 0){
+					if (size == 0){
+						printf("End of socket\n");
+					}else{
+						perror("Error reading socket -> ");
+					}
+					exit(-1);
+				}
+				if ((unsigned char)byte == FEND){
+					no_frame = false;
+				}else if (transpose == true){
+					if ((unsigned char) byte == TFEND){
+						buffer[i] = FEND;
+					}else if ((unsigned char) byte == TFESC){
+						buffer[i] = FESC;
+					}
+					transpose = false;
+					i++;
+				}else if ((unsigned char) byte == FESC){
+					transpose = true;
+				}else{
+					buffer[i] = byte;
+					i++;
+				}
+			}
+			buffer[i] = '\0';
+			printf("%s\n", buffer);
+			return NO_BEACON;
 		}
 	}else{
-		return -1;
+		return NO_FRAME;
 	}
 	no_frame = true;
 	i = 0;
@@ -120,12 +156,21 @@ ErrorHandler kiss_ax25_unpack(char * buffer, int size, ax25_packet_t * out){
 	int i, j;
 	out->size = size;
 
+	if (out->size < 17){
+		printf("Frame discarded, too short packet\n");
+		return NO_FRAME;
+	}
+
 	for (i = 0; i < 14; i++){
 		buffer[i] = (buffer[i]&0xFF) >> 1;
 	}
-	strcpy(out->to, buffer);
-	strcpy(out->from, buffer+7);
-
+	if (buffer[6] == '\0' && buffer[13] == '\0'){
+		strcpy(out->to, buffer);
+		strcpy(out->from, buffer+7);
+	}else{
+		printf("Frame discarded, wrong addresses (not following ax25 format)\n");
+		return NO_FRAME;
+	}
 	out->control = *buffer+14;
 	out->pid = *buffer+15;
 
