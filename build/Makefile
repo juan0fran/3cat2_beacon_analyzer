@@ -127,6 +127,30 @@ kiss/fast:
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/build
 .PHONY : kiss/fast
 
+apps/isis_reader.o: apps/isis_reader.c.o
+.PHONY : apps/isis_reader.o
+
+# target to build an object file
+apps/isis_reader.c.o:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/apps/isis_reader.c.o
+.PHONY : apps/isis_reader.c.o
+
+apps/isis_reader.i: apps/isis_reader.c.i
+.PHONY : apps/isis_reader.i
+
+# target to preprocess a source file
+apps/isis_reader.c.i:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/apps/isis_reader.c.i
+.PHONY : apps/isis_reader.c.i
+
+apps/isis_reader.s: apps/isis_reader.c.s
+.PHONY : apps/isis_reader.s
+
+# target to generate assembly for a file
+apps/isis_reader.c.s:
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/apps/isis_reader.c.s
+.PHONY : apps/isis_reader.c.s
+
 src/3cat2_telemetry.o: src/3cat2_telemetry.c.o
 .PHONY : src/3cat2_telemetry.o
 
@@ -159,7 +183,6 @@ src/main.o: src/main.c.o
 
 # target to build an object file
 src/main.c.o:
-	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/main.c.o
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/main.c.o
 .PHONY : src/main.c.o
 
@@ -168,7 +191,6 @@ src/main.i: src/main.c.i
 
 # target to preprocess a source file
 src/main.c.i:
-	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/main.c.i
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/main.c.i
 .PHONY : src/main.c.i
 
@@ -177,7 +199,6 @@ src/main.s: src/main.c.s
 
 # target to generate assembly for a file
 src/main.c.s:
-	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/main.c.s
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/main.c.s
 .PHONY : src/main.c.s
 
@@ -186,7 +207,6 @@ src/socket_utils.o: src/socket_utils.c.o
 
 # target to build an object file
 src/socket_utils.c.o:
-	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/socket_utils.c.o
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/socket_utils.c.o
 .PHONY : src/socket_utils.c.o
 
@@ -195,7 +215,6 @@ src/socket_utils.i: src/socket_utils.c.i
 
 # target to preprocess a source file
 src/socket_utils.c.i:
-	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/socket_utils.c.i
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/socket_utils.c.i
 .PHONY : src/socket_utils.c.i
 
@@ -204,7 +223,6 @@ src/socket_utils.s: src/socket_utils.c.s
 
 # target to generate assembly for a file
 src/socket_utils.c.s:
-	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/socket_utils.c.s
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/socket_utils.c.s
 .PHONY : src/socket_utils.c.s
 
@@ -245,6 +263,9 @@ help:
 	@echo "... isis_raw"
 	@echo "... kiss"
 	@echo "... rebuild_cache"
+	@echo "... apps/isis_reader.o"
+	@echo "... apps/isis_reader.i"
+	@echo "... apps/isis_reader.s"
 	@echo "... src/3cat2_telemetry.o"
 	@echo "... src/3cat2_telemetry.i"
 	@echo "... src/3cat2_telemetry.s"

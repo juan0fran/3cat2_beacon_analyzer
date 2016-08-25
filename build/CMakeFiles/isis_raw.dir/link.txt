@@ -1,1 +1,1 @@
-/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o CMakeFiles/isis_raw.dir/src/main.c.o CMakeFiles/isis_raw.dir/src/socket_utils.c.o CMakeFiles/isis_raw.dir/src/util.c.o  -o ../bin/isis_raw  
+/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/isis_raw.dir/apps/isis_reader.c.o CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o CMakeFiles/isis_raw.dir/src/util.c.o  -o ../bin/isis_raw  

@@ -52,9 +52,32 @@ include CMakeFiles/isis_raw.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/isis_raw.dir/flags.make
 
+CMakeFiles/isis_raw.dir/apps/isis_reader.c.o: CMakeFiles/isis_raw.dir/flags.make
+CMakeFiles/isis_raw.dir/apps/isis_reader.c.o: ../apps/isis_reader.c
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/isis_raw.dir/apps/isis_reader.c.o"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/isis_raw.dir/apps/isis_reader.c.o   -c /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/apps/isis_reader.c
+
+CMakeFiles/isis_raw.dir/apps/isis_reader.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/isis_raw.dir/apps/isis_reader.c.i"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/apps/isis_reader.c > CMakeFiles/isis_raw.dir/apps/isis_reader.c.i
+
+CMakeFiles/isis_raw.dir/apps/isis_reader.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/isis_raw.dir/apps/isis_reader.c.s"
+	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/apps/isis_reader.c -o CMakeFiles/isis_raw.dir/apps/isis_reader.c.s
+
+CMakeFiles/isis_raw.dir/apps/isis_reader.c.o.requires:
+.PHONY : CMakeFiles/isis_raw.dir/apps/isis_reader.c.o.requires
+
+CMakeFiles/isis_raw.dir/apps/isis_reader.c.o.provides: CMakeFiles/isis_raw.dir/apps/isis_reader.c.o.requires
+	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/apps/isis_reader.c.o.provides.build
+.PHONY : CMakeFiles/isis_raw.dir/apps/isis_reader.c.o.provides
+
+CMakeFiles/isis_raw.dir/apps/isis_reader.c.o.provides.build: CMakeFiles/isis_raw.dir/apps/isis_reader.c.o
+
 CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o: CMakeFiles/isis_raw.dir/flags.make
 CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o: ../src/3cat2_telemetry.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o   -c /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/3cat2_telemetry.c
 
@@ -75,55 +98,9 @@ CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o.provides: CMakeFiles/isis_raw.di
 
 CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o.provides.build: CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o
 
-CMakeFiles/isis_raw.dir/src/main.c.o: CMakeFiles/isis_raw.dir/flags.make
-CMakeFiles/isis_raw.dir/src/main.c.o: ../src/main.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles $(CMAKE_PROGRESS_2)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/isis_raw.dir/src/main.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/isis_raw.dir/src/main.c.o   -c /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/main.c
-
-CMakeFiles/isis_raw.dir/src/main.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/isis_raw.dir/src/main.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/main.c > CMakeFiles/isis_raw.dir/src/main.c.i
-
-CMakeFiles/isis_raw.dir/src/main.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/isis_raw.dir/src/main.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/main.c -o CMakeFiles/isis_raw.dir/src/main.c.s
-
-CMakeFiles/isis_raw.dir/src/main.c.o.requires:
-.PHONY : CMakeFiles/isis_raw.dir/src/main.c.o.requires
-
-CMakeFiles/isis_raw.dir/src/main.c.o.provides: CMakeFiles/isis_raw.dir/src/main.c.o.requires
-	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/main.c.o.provides.build
-.PHONY : CMakeFiles/isis_raw.dir/src/main.c.o.provides
-
-CMakeFiles/isis_raw.dir/src/main.c.o.provides.build: CMakeFiles/isis_raw.dir/src/main.c.o
-
-CMakeFiles/isis_raw.dir/src/socket_utils.c.o: CMakeFiles/isis_raw.dir/flags.make
-CMakeFiles/isis_raw.dir/src/socket_utils.c.o: ../src/socket_utils.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles $(CMAKE_PROGRESS_3)
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/isis_raw.dir/src/socket_utils.c.o"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/isis_raw.dir/src/socket_utils.c.o   -c /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/socket_utils.c
-
-CMakeFiles/isis_raw.dir/src/socket_utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/isis_raw.dir/src/socket_utils.c.i"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -E /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/socket_utils.c > CMakeFiles/isis_raw.dir/src/socket_utils.c.i
-
-CMakeFiles/isis_raw.dir/src/socket_utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/isis_raw.dir/src/socket_utils.c.s"
-	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -S /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/socket_utils.c -o CMakeFiles/isis_raw.dir/src/socket_utils.c.s
-
-CMakeFiles/isis_raw.dir/src/socket_utils.c.o.requires:
-.PHONY : CMakeFiles/isis_raw.dir/src/socket_utils.c.o.requires
-
-CMakeFiles/isis_raw.dir/src/socket_utils.c.o.provides: CMakeFiles/isis_raw.dir/src/socket_utils.c.o.requires
-	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/socket_utils.c.o.provides.build
-.PHONY : CMakeFiles/isis_raw.dir/src/socket_utils.c.o.provides
-
-CMakeFiles/isis_raw.dir/src/socket_utils.c.o.provides.build: CMakeFiles/isis_raw.dir/src/socket_utils.c.o
-
 CMakeFiles/isis_raw.dir/src/util.c.o: CMakeFiles/isis_raw.dir/flags.make
 CMakeFiles/isis_raw.dir/src/util.c.o: ../src/util.c
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles $(CMAKE_PROGRESS_4)
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles $(CMAKE_PROGRESS_3)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building C object CMakeFiles/isis_raw.dir/src/util.c.o"
 	/usr/bin/cc  $(C_DEFINES) $(C_FLAGS) -o CMakeFiles/isis_raw.dir/src/util.c.o   -c /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/src/util.c
 
@@ -146,17 +123,15 @@ CMakeFiles/isis_raw.dir/src/util.c.o.provides.build: CMakeFiles/isis_raw.dir/src
 
 # Object files for target isis_raw
 isis_raw_OBJECTS = \
+"CMakeFiles/isis_raw.dir/apps/isis_reader.c.o" \
 "CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o" \
-"CMakeFiles/isis_raw.dir/src/main.c.o" \
-"CMakeFiles/isis_raw.dir/src/socket_utils.c.o" \
 "CMakeFiles/isis_raw.dir/src/util.c.o"
 
 # External object files for target isis_raw
 isis_raw_EXTERNAL_OBJECTS =
 
+../bin/isis_raw: CMakeFiles/isis_raw.dir/apps/isis_reader.c.o
 ../bin/isis_raw: CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o
-../bin/isis_raw: CMakeFiles/isis_raw.dir/src/main.c.o
-../bin/isis_raw: CMakeFiles/isis_raw.dir/src/socket_utils.c.o
 ../bin/isis_raw: CMakeFiles/isis_raw.dir/src/util.c.o
 ../bin/isis_raw: CMakeFiles/isis_raw.dir/build.make
 ../bin/isis_raw: CMakeFiles/isis_raw.dir/link.txt
@@ -167,9 +142,8 @@ isis_raw_EXTERNAL_OBJECTS =
 CMakeFiles/isis_raw.dir/build: ../bin/isis_raw
 .PHONY : CMakeFiles/isis_raw.dir/build
 
+CMakeFiles/isis_raw.dir/requires: CMakeFiles/isis_raw.dir/apps/isis_reader.c.o.requires
 CMakeFiles/isis_raw.dir/requires: CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o.requires
-CMakeFiles/isis_raw.dir/requires: CMakeFiles/isis_raw.dir/src/main.c.o.requires
-CMakeFiles/isis_raw.dir/requires: CMakeFiles/isis_raw.dir/src/socket_utils.c.o.requires
 CMakeFiles/isis_raw.dir/requires: CMakeFiles/isis_raw.dir/src/util.c.o.requires
 .PHONY : CMakeFiles/isis_raw.dir/requires
 
