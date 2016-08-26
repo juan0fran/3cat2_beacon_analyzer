@@ -56,13 +56,48 @@ CMAKE_SOURCE_DIR = /Users/juan0fran/Dropbox/Telecos/Kiss_Interface
 CMAKE_BINARY_DIR = /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build
 
 #=============================================================================
+# Target rules for target CMakeFiles/db_reader.dir
+
+# All Build rule for target.
+CMakeFiles/db_reader.dir/all:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/depend
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/build
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles  1 2 3
+	@echo "Built target db_reader"
+.PHONY : CMakeFiles/db_reader.dir/all
+
+# Include target in all.
+all: CMakeFiles/db_reader.dir/all
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/db_reader.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/db_reader.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles 0
+.PHONY : CMakeFiles/db_reader.dir/rule
+
+# Convenience name for target.
+db_reader: CMakeFiles/db_reader.dir/rule
+.PHONY : db_reader
+
+# clean rule for target.
+CMakeFiles/db_reader.dir/clean:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/clean
+.PHONY : CMakeFiles/db_reader.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/db_reader.dir/clean
+.PHONY : clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/isis_raw.dir
 
 # All Build rule for target.
 CMakeFiles/isis_raw.dir/all:
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/depend
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles  1 2 3
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles  4 5 6
 	@echo "Built target isis_raw"
 .PHONY : CMakeFiles/isis_raw.dir/all
 
@@ -97,7 +132,7 @@ clean: CMakeFiles/isis_raw.dir/clean
 CMakeFiles/kiss.dir/all:
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/depend
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/build
-	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles  4 5 6 7
+	$(CMAKE_COMMAND) -E cmake_progress_report /Users/juan0fran/Dropbox/Telecos/Kiss_Interface/build/CMakeFiles  7 8 9 10
 	@echo "Built target kiss"
 .PHONY : CMakeFiles/kiss.dir/all
 

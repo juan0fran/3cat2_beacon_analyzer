@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../include/3cat2_telemetry.h
+
+../include/socket_utils.h
+
+../include/util.h
+
+/Users/juan0fran/Dropbox/Telecos/Kiss_Interface/apps/peosat_db_reader.c
+stdio.h
+-
+stdlib.h
+-
+stdbool.h
+-
+unistd.h
+-
+signal.h
+-
+poll.h
+-
+string.h
+-
+socket_utils.h
+-
+time.h
+-
+3cat2_telemetry.h
+-
+util.h
+-
+

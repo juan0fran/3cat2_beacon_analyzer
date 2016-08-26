@@ -1,0 +1,1 @@
+/usr/bin/cc   -Wl,-search_paths_first -Wl,-headerpad_max_install_names   CMakeFiles/db_reader.dir/apps/peosat_db_reader.c.o CMakeFiles/db_reader.dir/src/3cat2_telemetry.c.o CMakeFiles/db_reader.dir/src/util.c.o  -o ../bin/db_reader  

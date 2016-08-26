@@ -102,6 +102,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named db_reader
+
+# Build rule for target.
+db_reader: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 db_reader
+.PHONY : db_reader
+
+# fast build rule for target.
+db_reader/fast:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/build
+.PHONY : db_reader/fast
+
+#=============================================================================
 # Target rules for targets named isis_raw
 
 # Build rule for target.
@@ -151,11 +164,36 @@ apps/isis_reader.c.s:
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/apps/isis_reader.c.s
 .PHONY : apps/isis_reader.c.s
 
+apps/peosat_db_reader.o: apps/peosat_db_reader.c.o
+.PHONY : apps/peosat_db_reader.o
+
+# target to build an object file
+apps/peosat_db_reader.c.o:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/apps/peosat_db_reader.c.o
+.PHONY : apps/peosat_db_reader.c.o
+
+apps/peosat_db_reader.i: apps/peosat_db_reader.c.i
+.PHONY : apps/peosat_db_reader.i
+
+# target to preprocess a source file
+apps/peosat_db_reader.c.i:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/apps/peosat_db_reader.c.i
+.PHONY : apps/peosat_db_reader.c.i
+
+apps/peosat_db_reader.s: apps/peosat_db_reader.c.s
+.PHONY : apps/peosat_db_reader.s
+
+# target to generate assembly for a file
+apps/peosat_db_reader.c.s:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/apps/peosat_db_reader.c.s
+.PHONY : apps/peosat_db_reader.c.s
+
 src/3cat2_telemetry.o: src/3cat2_telemetry.c.o
 .PHONY : src/3cat2_telemetry.o
 
 # target to build an object file
 src/3cat2_telemetry.c.o:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/src/3cat2_telemetry.c.o
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.o
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/3cat2_telemetry.c.o
 .PHONY : src/3cat2_telemetry.c.o
@@ -165,6 +203,7 @@ src/3cat2_telemetry.i: src/3cat2_telemetry.c.i
 
 # target to preprocess a source file
 src/3cat2_telemetry.c.i:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/src/3cat2_telemetry.c.i
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.i
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/3cat2_telemetry.c.i
 .PHONY : src/3cat2_telemetry.c.i
@@ -174,6 +213,7 @@ src/3cat2_telemetry.s: src/3cat2_telemetry.c.s
 
 # target to generate assembly for a file
 src/3cat2_telemetry.c.s:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/src/3cat2_telemetry.c.s
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/3cat2_telemetry.c.s
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/3cat2_telemetry.c.s
 .PHONY : src/3cat2_telemetry.c.s
@@ -231,6 +271,7 @@ src/util.o: src/util.c.o
 
 # target to build an object file
 src/util.c.o:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/src/util.c.o
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/util.c.o
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/util.c.o
 .PHONY : src/util.c.o
@@ -240,6 +281,7 @@ src/util.i: src/util.c.i
 
 # target to preprocess a source file
 src/util.c.i:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/src/util.c.i
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/util.c.i
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/util.c.i
 .PHONY : src/util.c.i
@@ -249,6 +291,7 @@ src/util.s: src/util.c.s
 
 # target to generate assembly for a file
 src/util.c.s:
+	$(MAKE) -f CMakeFiles/db_reader.dir/build.make CMakeFiles/db_reader.dir/src/util.c.s
 	$(MAKE) -f CMakeFiles/isis_raw.dir/build.make CMakeFiles/isis_raw.dir/src/util.c.s
 	$(MAKE) -f CMakeFiles/kiss.dir/build.make CMakeFiles/kiss.dir/src/util.c.s
 .PHONY : src/util.c.s
@@ -259,6 +302,7 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
+	@echo "... db_reader"
 	@echo "... edit_cache"
 	@echo "... isis_raw"
 	@echo "... kiss"
@@ -266,6 +310,9 @@ help:
 	@echo "... apps/isis_reader.o"
 	@echo "... apps/isis_reader.i"
 	@echo "... apps/isis_reader.s"
+	@echo "... apps/peosat_db_reader.o"
+	@echo "... apps/peosat_db_reader.i"
+	@echo "... apps/peosat_db_reader.s"
 	@echo "... src/3cat2_telemetry.o"
 	@echo "... src/3cat2_telemetry.i"
 	@echo "... src/3cat2_telemetry.s"
